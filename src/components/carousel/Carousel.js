@@ -8,7 +8,7 @@ const CarouselContainer = () => {
       <div className="row">
         <div className="col-sm-12">
           <Carousel fade>
-            <Carousel.Item interval={1000}>
+            <Carousel.Item>
             
               <img
                 className="d-block w-100"

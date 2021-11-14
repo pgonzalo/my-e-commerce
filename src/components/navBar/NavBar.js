@@ -3,6 +3,7 @@ import logo from "./logo.svg";
 import "./NavBar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav } from "react-bootstrap";
+import CartWidget from "../cartWidget/CartWidget";
 
 const NavBar = () => {
   return (
@@ -22,7 +23,9 @@ const NavBar = () => {
             <Nav.Link href="#pricing">Fried</Nav.Link>
           </Nav>
           </Navbar.Collapse>
+          <CartWidget />
       </Navbar>
+
     </>
   );
 };
