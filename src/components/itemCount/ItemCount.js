@@ -7,7 +7,7 @@ export const ItemCount = () => {
         counter < stock ? setCounter(counter + 1) : alert("No queda más stock");
     }
     const Substract = () => {
-        counter > 0 && stock > 0 ? setCounter(counter - 1) : alert("0");
+        counter > 0 && stock > 0 ? setCounter(counter - 1) : alert("Que te pensas que vas a comer menos una hamburguesa? para un poco!!");
     }
 
 
