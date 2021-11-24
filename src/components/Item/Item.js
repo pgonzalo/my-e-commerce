@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card,  Image } from 'semantic-ui-react'
 import { ItemCount } from '../itemCount/ItemCount'
+import "./Item.css";
 
 const Item = ({ data }) => (
   <Card>
