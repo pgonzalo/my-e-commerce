@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { InputGroup, Button, FormControl } from "react-bootstrap";
+import "./ItemCount.css";
+
 
 export const ItemCount = () => {
   const stock = 15;
@@ -9,11 +11,7 @@ export const ItemCount = () => {
     counter < stock ? setCounter(counter + 1) : alert("No queda más stock");
   };
   const Substract = () => {
-    counter > 0 && stock > 0
-      ? setCounter(counter - 1)
-      : alert(
-          "Muy ligth lo tuyo!!"
-        );
+    counter > 0 && stock > 0 ? setCounter(counter - 1) : alert("Muy ligth lo tuyo!!");
   };
 
   return (
@@ -25,11 +23,12 @@ export const ItemCount = () => {
     >
       -
     </Button>
-    <FormControl
+    <FormControl className="counter"
       aria-label="Example text with button addon"
       aria-describedby="basic-addon1"
       value={counter}
       onChange={setCounter}
+      
       readOnly
     />
     <Button variant="outline-secondary" 

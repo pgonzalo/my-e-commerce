@@ -8,24 +8,27 @@ import CartWidget from "../cartWidget/CartWidget";
 const NavBar = () => {
   return (
     <>
-      <Navbar bg="myGreen" variant="dark"
-       sticky="top" expand="lg" collapseOnSelect>
+      <Navbar
+        bg="myGreen"
+        variant="dark"
+        sticky="top"
+        expand="lg"
+        collapseOnSelect
+      >
         <Navbar.Brand href="#home">
           <img src={logo} width="40px" height="40px" alt="Logo de Nativo bar" />{" "}
           Nativo
         </Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse>
-        
           <Nav>
-            <Nav.Link href="#home">Burguers</Nav.Link>
+            <Nav.Link href="#home">Usuarios</Nav.Link>
             <Nav.Link href="#features">Pizas</Nav.Link>
             <Nav.Link href="#pricing">Fried</Nav.Link>
           </Nav>
-          </Navbar.Collapse>
-          <CartWidget />
+        </Navbar.Collapse>
+        <CartWidget />
       </Navbar>
-
     </>
   );
 };
