@@ -3,8 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/navBar/NavBar.js";
 import CarouselContainer from "./components/carousel/Carousel";
 import { ItemListContainer } from "./components/itemListContainer/ItemListContainer";
-import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+//import { ItemDetail  } from "./components/ItemDetail/ItemDetail"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ItemDetail from "./components/ItemDetail/ItemDetail";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
 
         <Routes>
           <Route path='/' element={<ItemListContainer />} />
-          <Route path='/item/:id' element={<ItemDetailContainer />} />
+          <Route path='/detail/:id' element={<ItemDetail />} />
           
         </Routes>
       </>

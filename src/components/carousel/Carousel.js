@@ -12,7 +12,7 @@ const CarouselContainer = () => {
             
               <img
                 className="d-block w-100"
-                src="https://res.cloudinary.com/dvptt7hw3/image/upload/v1597351658/samples/ecommerce/analog-classic.jpg"
+                src="../../../public/img/Menu-1300X300-Draft1.jpg"
                 alt="First slide"
                 style={{ height: "300px" }}
               />

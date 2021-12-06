@@ -6,11 +6,11 @@ import './CartWidget.css';
  
 function CartWidget() {
     return (
-        <div className="cart-icon" >
+        <div>
                   {/* <Link to={`/cart`}>
         <Button id="button" variant="green">Agregar</Button>
       </Link> */}
-            <BsCart3  />
+            <BsCart3 className="cart-icon" />
         </div>
     )
 }

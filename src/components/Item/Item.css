@@ -1,6 +1,5 @@
-.card {
-    margin: 50;
-}
-.img{
-    size: 500px;
+.item {
+    padding: 5px !important;
+    
+    
 }
