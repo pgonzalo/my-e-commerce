@@ -12,7 +12,7 @@ const CarouselContainer = () => {
             
               <img
                 className="d-block w-100"
-                src="../../../public/img/Menu-1300X300-Draft1.jpg"
+                src="https://res.cloudinary.com/dvptt7hw3/image/upload/v1638836132/Menu-1300X300-Draft1_qxotqn.jpg"
                 alt="First slide"
                 style={{ height: "300px" }}
               />
@@ -26,7 +26,7 @@ const CarouselContainer = () => {
             <Carousel.Item>
               <img
                 className="d-block w-100"
-                src="https://res.cloudinary.com/dvptt7hw3/image/upload/v1597351666/samples/ecommerce/leather-bag-gray.jpg"
+                src="https://res.cloudinary.com/dvptt7hw3/image/upload/v1638836094/images_tub1a6.jpg"
                 alt="Second slide"
                 style={{ height: "300px" }}
               />
@@ -39,7 +39,7 @@ const CarouselContainer = () => {
             <Carousel.Item>
               <img
                 className="d-block w-100"
-                src="https://res.cloudinary.com/dvptt7hw3/image/upload/v1597351661/samples/sheep.jpg"
+                src="https://res.cloudinary.com/dvptt7hw3/image/upload/v1638836091/bad-daddy_cdxgiz.jpg"
                 alt="Third slide"
                 style={{ height: "300px" }}
               />

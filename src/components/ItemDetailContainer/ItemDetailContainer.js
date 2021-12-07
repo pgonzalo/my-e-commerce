@@ -30,7 +30,7 @@
 
 import React, { useEffect, useState } from "react";
 
-import { Card, Image } from "semantic-ui-react";
+import { Item } from "semantic-ui-react";
 import axios from "axios";
 import { useParams } from "react-router";
 
@@ -51,22 +51,33 @@ function ItemDetailContainer() {
 
   return (
     <div className="ItemList-detail">
-      <h1>Item Detail</h1>
+      
       {item && (
-        <Card key={item.id}>
-          <Image src={item.avatar_url} wrapped ui={false} />
-
-          <Card.Content>
-            <Card.Header>{item.type}</Card.Header>
-            <Card.Meta>
-              <span className="date">{item.login}</span>
-            </Card.Meta>
-            <Card.Description>{item.login}</Card.Description>
-          </Card.Content>
-        </Card>
+        <div>
+            <Item.Group>
+            <Item>
+              <Item.Image size='big' src={item.avatar_url} />
+        
+              <Item.Content>
+                <Item.Header as='a'>{item.login}</Item.Header>
+                <Item.Meta>{item.emails_url}</Item.Meta>
+                <Item.Description>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Explicabo ipsa ipsum iusto, est, harum odit vel unde id
+                    quos non nostrum, tenetur molestias cumque! Esse
+                    possimus eveniet officiis facilis. Praesentium!
+                </Item.Description>
+                <Item.Extra>Additional Details</Item.Extra>
+              </Item.Content>
+            </Item>
+   
+       
+            </Item.Group>
+          </div>
       )}
     </div>
   );
 }
 
 export default ItemDetailContainer;
+
