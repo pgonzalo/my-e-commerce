@@ -1,35 +1,5 @@
-// import React, { useEffect, useState } from "react";
-
-// import Item from "../Item/Item";
-// import "./ItemDetailContainer.css";
-
-// const ItemDetailContainer = () => {
-//   const [items, setItems] = useState([]);
-
-//   useEffect(() => {
-//     fetch(`${process.env.REACT_APP_API_URL}`)
-//       .then((res) => res.json())
-//       .then((json) => setItems(json))
-//       .catch(error => console.log('Error: ', error))
-//   }, []);
-
-//   return (
-
-//         <div className='Item-Detail-Container'>
-//             <h1> 'ItemDetailContaier' </h1>
-//           {items.filter((user) => {
-//             return <Item data={user} key={user.id} />;
-//           })}
-//         </div>
-
-//     );
-
-// };
-
-//  export default ItemDetailContainer;
-
 import React, { useEffect, useState } from "react";
-
+import ItemCount from "../ItemCount/ItemCount"
 import { Item } from "semantic-ui-react";
 import axios from "axios";
 import { useParams } from "react-router";
@@ -67,6 +37,7 @@ function ItemDetailContainer() {
                     quos non nostrum, tenetur molestias cumque! Esse
                     possimus eveniet officiis facilis. Praesentium!
                 </Item.Description>
+                <ItemCount />
                 <Item.Extra>Additional Details</Item.Extra>
               </Item.Content>
             </Item>

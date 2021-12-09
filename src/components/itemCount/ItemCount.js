@@ -3,7 +3,7 @@ import { InputGroup, Button, FormControl } from "react-bootstrap";
 import "./ItemCount.css";
 
 
-export const ItemCount = () => {
+const ItemCount = () => {
   const stock = 15;
   const [counter, setCounter] = useState(0);
 
@@ -37,9 +37,14 @@ export const ItemCount = () => {
     >
       +
     </Button>
+    <Button onClick={alert}>
+      Comprar
+    </Button>
   </InputGroup>
 
   );
 
   
 };
+
+export default ItemCount;
