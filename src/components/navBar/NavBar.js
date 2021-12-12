@@ -2,8 +2,10 @@ import React from "react";
 import logo from "./logo.svg";
 import "./NavBar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav  } from "react-bootstrap";
 import CartWidget from "../cartWidget/CartWidget";
+import {  NavLink } from "react-router-dom";
+
 
 const NavBar = () => {
   return (
@@ -22,9 +24,9 @@ const NavBar = () => {
         <Navbar.Toggle />
         <Navbar.Collapse>
           <Nav>
-            <Nav.Link href="#home">Usuarios</Nav.Link>
-            <Nav.Link href="#features">Pizas</Nav.Link>
-            <Nav.Link href="#pricing">Fried</Nav.Link>
+            <NavLink to="#Burgers"> BURGERS </NavLink>
+            <NavLink to="#Pizas"> PIZAS </NavLink>
+            <NavLink to="#Fried"> FRITOS </NavLink>
           </Nav>
         </Navbar.Collapse>
         <CartWidget />

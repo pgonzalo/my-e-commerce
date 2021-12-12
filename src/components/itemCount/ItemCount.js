@@ -3,8 +3,9 @@ import { InputGroup, Button, FormControl } from "react-bootstrap";
 import "./ItemCount.css";
 
 
-const ItemCount = () => {
-  const stock = 15;
+
+const ItemCount = ({ stock, onAdd }) => {
+  console.log(stock);
   const [counter, setCounter] = useState(0);
 
   const Add = () => {
@@ -15,6 +16,7 @@ const ItemCount = () => {
   };
 
   return (
+    <div>
     <InputGroup className="mb-3 form-calculator-minmax">
     <Button
       variant="outline-secondary"
@@ -37,10 +39,32 @@ const ItemCount = () => {
     >
       +
     </Button>
-    <Button onClick={alert}>
-      Comprar
-    </Button>
+    
+    
   </InputGroup>
+  {
+    counter > 0 ?
+    <div className="ui bottom attached button" onClick={() => onAdd(counter)}>
+      <i className="cart icon"></i>
+      Añadir al carrito
+      </div>
+      :
+      <div className="ui bottom attached button disabled">
+      <i className="cart icon"></i>
+      Añadir al carrito
+      </div>
+  }
+  
+      {/* // <Button  className="compra" onClick={alert("Coprando")}>
+      //   Comprar
+      // </Button> */}
+
+
+  </div>
+  
+
+
+ 
 
   );
 

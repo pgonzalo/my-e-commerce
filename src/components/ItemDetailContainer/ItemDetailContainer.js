@@ -4,7 +4,8 @@ import { Item } from "semantic-ui-react";
 import axios from "axios";
 import { useParams } from "react-router";
 
-function ItemDetailContainer() {
+
+function ItemDetailContainer({ stock }) {
   let id = useParams();
 
   let userID = id.id;
@@ -17,7 +18,7 @@ function ItemDetailContainer() {
       console.log(res);
     });
     console.log(item);
-  }, []);
+  }, [userID]);
 
   return (
     <div className="ItemList-detail">
@@ -37,7 +38,10 @@ function ItemDetailContainer() {
                     quos non nostrum, tenetur molestias cumque! Esse
                     possimus eveniet officiis facilis. Praesentium!
                 </Item.Description>
-                <ItemCount />
+               
+                <ItemCount/>
+                
+                
                 <Item.Extra>Additional Details</Item.Extra>
               </Item.Content>
             </Item>
