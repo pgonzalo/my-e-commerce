@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import ItemCount from "../itemCount/ItemCount";
+import ItemCount from "../ItemCount/ItemCount";
 import { Item } from "semantic-ui-react";
 import axios from "axios";
 import { useParams } from "react-router";
@@ -11,10 +11,10 @@ function ItemDetailContainer({items}) {
   const { addToCart } = useContext(CartContext);
   const [changeButton, setChangeButton] = useState(false)
  
-  const onAdd = (quantity) => {
-    addToCart(items, quantity)
+  const onAdd = (counter) => {
+    addToCart(items, counter)
     setChangeButton(true)
-    //alert(`Ingresaste ${counter} ${prod} al carrito.`);
+    alert(`Ingresaste ${counter} ${items} al carrito.`);
   }
 
  //  const addToCart = (counter) => {

@@ -6,7 +6,7 @@ import { ItemListContainer } from "./components/itemListContainer/ItemListContai
 //import { ItemDetail  } from "./components/ItemDetail/ItemDetail"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ItemDetail from "./components/ItemDetail/ItemDetail";
-import CartWidget from "./components/cartWidget/CartWidget";
+import CartWidget from "./components/CartWidget/CartWidget";
 import { CartProvider } from "./components/Context/CartContext";
 
 const App = () => {
@@ -18,6 +18,7 @@ const App = () => {
 
         <Routes>
           <Route path="/" element={<ItemListContainer greeting="Bienveido A Nativo"/>} />
+          <Route path="/home" element={<ItemListContainer />} />
           <Route path="/detail/:id" element={<ItemDetail />} />
           <Route path="/burguers" element={<ItemDetail />} />
           <Route path="/pizas" element={<ItemDetail />} />
