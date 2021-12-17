@@ -1,27 +1,27 @@
-import React, { useEffect, useState } from "react";
-import ItemCount from "../ItemCount/ItemCount";
+import React, { useEffect, useState, useContext } from "react";
+import ItemCount from "../itemCount/ItemCount";
 import { Item } from "semantic-ui-react";
 import axios from "axios";
 import { useParams } from "react-router";
 import "./ItemDetailContainer.css";
 import { Link } from "react-router-dom";
-import { useCartContext } from '../Context/CartContext'
+import { CartContext } from "../Context/CartContext";
 
-function ItemDetailContainer({item}) {
-  const{addToCart} = useCartContext();
+function ItemDetailContainer({items}) {
+  const { addToCart } = useContext(CartContext);
   const [changeButton, setChangeButton] = useState(false)
  
   const onAdd = (quantity) => {
-    addToCart(item, quantity)
+    addToCart(items, quantity)
     setChangeButton(true)
-    alert(`Ingresaste ${counter} ${prod} al carrito.`);
+    //alert(`Ingresaste ${counter} ${prod} al carrito.`);
   }
 
-  // const addToCart = (counter) => {
-  //   let prod;
-  //   counter > 1 ? prod = 'productos' : prod = 'producto';
+ //  const addToCart = (counter) => {
+ //    let prod;
+ //    counter > 1 ? prod = 'productos' : prod = 'producto';
   //   alert(`Ingresaste ${counter} ${prod} al carrito.`);
-  // }
+ //  }
 
 
   let id = useParams();
@@ -58,7 +58,7 @@ function ItemDetailContainer({item}) {
                 <>
                   {
                     !changeButton &&
-                    <ItemCount stock={12} onAdd={addToCart} initial={0} changeButton={changeButton} />
+                    <ItemCount stock={12} item={item} onAdd={addToCart} initial={0} changeButton={changeButton} />
                   }
                   {
                     changeButton &&

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { InputGroup, Button, FormControl } from "react-bootstrap";
 import "./ItemCount.css";
 
-const ItemCount = ({ stock, onAdd, initial, changeButon }) => {
+const ItemCount = ({ item, stock, onAdd, initial, changeButon }) => {
   
   const [counter, setCounter] = useState(initial);
 
@@ -40,7 +40,7 @@ const ItemCount = ({ stock, onAdd, initial, changeButon }) => {
       {counter > 0 ? (
         <div
           className="ui bottom attached button"
-          onClick={() => onAdd(counter)}
+          onClick={() => onAdd(item, counter)}
         >
           <i className="cart icon"></i>
           Añadir al carrito

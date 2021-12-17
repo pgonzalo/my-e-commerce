@@ -6,10 +6,10 @@ import { ItemListContainer } from "./components/itemListContainer/ItemListContai
 //import { ItemDetail  } from "./components/ItemDetail/ItemDetail"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ItemDetail from "./components/ItemDetail/ItemDetail";
-import CartWidget from "./components/CartWidget/CartWidget";
+import CartWidget from "./components/cartWidget/CartWidget";
 import { CartProvider } from "./components/Context/CartContext";
 
-function App() {
+const App = () => {
   return (
     <CartProvider>
       <Router>

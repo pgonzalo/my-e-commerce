@@ -4,7 +4,7 @@ import { Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./CartWidget.css";
 
-function CartWidget() {
+const CartWidget = () => {
   return (
     <div>
       {
