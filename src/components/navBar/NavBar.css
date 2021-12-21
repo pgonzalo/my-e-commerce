@@ -1,6 +1,13 @@
 .bg-myGreen{
-    background-color: rgb(106, 226, 106);
+    background-color: rgb(1, 32, 0);
 }
-.nav-items{
-    margin: 5px;
+
+.Link{
+    color: rgb(252, 248, 248);
+    margin: 10px;
+}
+.nav-bar-brand{
+    height: 40px;
+    font-weight: bolder;
+    width: 40px;
 }

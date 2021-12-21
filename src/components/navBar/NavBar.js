@@ -17,16 +17,25 @@ const NavBar = () => {
         expand="lg"
         collapseOnSelect
       >
-        <Navbar.Brand href="#home">
-          <img src={logo} width="40px" height="40px" alt="Logo de Nativo bar" />{" "}
+        <NavLink to="/home">
+        <Navbar.Brand href="#home"className="nav-bar-brand">
+          <img src={logo} alt="Logo de Nativo bar"  height="45px"
+            font-weight= "bolder" width= "45px"/>{" "}
           Nativo
         </Navbar.Brand>
+        </NavLink>
         <Navbar.Toggle />
         <Navbar.Collapse>
           <Nav className="nav-items">
-            <NavLink to="#Burgers"> BURGERS </NavLink>
-            <NavLink to="#Pizas"> PIZAS </NavLink>
-            <NavLink to="#Fried"> FRITOS </NavLink>
+            <NavLink to="/burgers" className="Link">
+               BURGERS
+            </NavLink>
+            <NavLink to="/pizas" className="Link">
+               PIZAS 
+            </NavLink>
+            <NavLink to="/fried" className="Link">
+               FRITOS
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
         <CartWidget />
