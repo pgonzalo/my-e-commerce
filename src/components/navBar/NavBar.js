@@ -31,10 +31,10 @@ const NavBar = () => {
                BURGERS
             </NavLink>
             <NavLink to="/pizas" className="Link">
-               PIZAS 
+               PIZZAS 
             </NavLink>
             <NavLink to="/fried" className="Link">
-               FRITOS
+               PARA PICAR
             </NavLink>
           </Nav>
         </Navbar.Collapse>

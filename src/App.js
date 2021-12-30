@@ -9,6 +9,9 @@ import ItemDetail from "./components/ItemDetail/ItemDetail";
 import CartWidget from "./components/CartWidget/CartWidget";
 import { CartProvider } from "./components/Context/CartContext";
 import Error from "./components/Error/Error";
+
+
+
 const App = () => {
   return (
     <CartProvider>

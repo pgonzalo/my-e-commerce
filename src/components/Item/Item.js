@@ -4,23 +4,22 @@ import { Card, Image } from "semantic-ui-react";
 import "./Item.css";
 
 const Item = ({ data }) => {
-  
-
-
-return (
-  <div className="item">
-    <Card>
-      <Image src={data.avatar_url} wrapped ui={false} className="img" />
-      <Card.Content>
-        <Card.Header>{data.login}</Card.Header>
-        <Card.Meta>
-          <span className="date">{data.type}</span>
-        </Card.Meta>
-        <Card.Description>{data.url}</Card.Description>
-        
-      </Card.Content>
-    </Card>
-  </div>
-);
-}
+  return (
+    <div className="item">
+      <Card>
+        <Image src={data.img} wrapped ui={false} className="img" />
+        <Card.Content>
+          <Card.Header>{data.name}</Card.Header>
+          <Card.Meta>
+            <span className="date">{data.category}</span>
+          </Card.Meta>
+          <Card.Description>{data.description}</Card.Description>
+        </Card.Content>
+        <Card.Content extra>
+          ${data.price} | Stock: {data.stock}
+        </Card.Content>
+      </Card>
+    </div>
+  );
+};
 export default Item;
