@@ -15,9 +15,8 @@ import Shopping from "./components/Shopping/Shopping";
 import Error from "./components/Error/Error";
 
 // CATEGORIES
-import Burgers from "./components/Categories/Burgers/Burgers";
-import Pizzas from "./components/Categories/Pizzas/Pizzas";
-import Picar from "./components/Categories/Picar/Picar";
+import ItemCategory from "./components/ItemCategory/ItemCategory";
+
 
 
 
@@ -32,9 +31,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={ <Home /> } />
           <Route path="/detail/:id" element={<ItemDetail />} />
-          <Route path="/burgers" element={<Burgers />} />
-          <Route path="/pizzas" element={<Pizzas />} />
-          <Route path="/picar" element={<Picar />} />
+          <Route path="/category/:category" element={<ItemCategory />} />
           <Route path="/cart" element={<CartWidget />} />
           <Route path="/shopping" element={<Shopping />} />
           <Route path="*" element={ <Error /> } />

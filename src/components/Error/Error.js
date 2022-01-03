@@ -1,12 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { Message } from 'semantic-ui-react';
 
-const Error = () => {
-    return (
-        <div>
-            <h1>Página no encontrada</h1>
-        </div>
-    )
-}
+const Error = () => (
+	<Message
+		warning
+		header='Error'
+		content="Página no encontrada"
+		style={{ textAlign: 'center' }}
+	/>
+);
 
-export default Error
+export default Error;
 

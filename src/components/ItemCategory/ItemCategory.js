@@ -1,28 +1,35 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+import { useParams  } from "react-router-dom";
+
 //FIREBASE/
-import { db } from "../../../firebase/firebaseConfig";
+import { db } from "../../firebase/firebaseConfig";
 import { collection, query, getDocs, where } from "firebase/firestore";
 
-import Item from "../../Item/Item";
+import Item from "../Item/Item";
 
 
-const Pizzas = () => {
+const ItemCategory = () => {
   const [items, setItems] = useState([]);
+  let category = useParams();  
+  console.log(category);
+
 
   useEffect(() => {
     const getProducts = async () => {
-      const q = query(collection(db, "Products"), where('category', '==', 'pizza') );
+  
+      const q = query(collection(db, "Products"), where('category', '==', category.category) );
       const docs = [];
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
+        console.log(doc);
         docs.push({ ...doc.data(), id: doc.id });
       });
       setItems(docs);
     };
     getProducts();
-  }, []);
+  }, [category.category]);
  
 
   return (
@@ -41,4 +48,4 @@ const Pizzas = () => {
   );
 };
 
-export default Pizzas;
+export default ItemCategory;

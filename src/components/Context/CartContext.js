@@ -19,11 +19,12 @@ export const CartProvider = ({ children }) => {
             }
             else setCartList([{ item, quantity: quantity}]);
             setQuantItems(quantItems + quantity);
+            console.log(cartList);
         }
-        console.log('context', cartList );
+        
 
     return(
-        <CartContext.Provider value={{addToCart, cartList, setCartList}}>
+        <CartContext.Provider value={ cartList }>
             {children}
         </CartContext.Provider>
     );

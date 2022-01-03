@@ -8,7 +8,7 @@ const CartWidget = () => {
   return (
     <div>
       {
-        <Link to={`/shopping`}>
+        <Link to={`/cart`}>
           <Button id="button" variant="green">
             <BsCart3 className="cart-icon" />
           </Button>

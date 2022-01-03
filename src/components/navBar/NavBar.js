@@ -27,13 +27,13 @@ const NavBar = () => {
         <Navbar.Toggle />
         <Navbar.Collapse>
           <Nav className="nav-items">
-            <NavLink to="/burgers" className="Link">
+            <NavLink to="/category/burger" className="Link">
                BURGERS
             </NavLink>
-            <NavLink to="/pizzas" className="Link">
+            <NavLink to="/category/pizza" className="Link">
                PIZZAS 
             </NavLink>
-            <NavLink to="/picar" className="Link">
+            <NavLink to="/category/picar" className="Link">
                PARA PICAR
             </NavLink>
           </Nav>
