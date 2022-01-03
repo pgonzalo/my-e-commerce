@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-//FIREBASE
-import { db } from "../../firebase/firebaseConfig";
-import { collection, query, getDocs } from "firebase/firestore";
+//FIREBASE/
+import { db } from "../../../firebase/firebaseConfig";
+import { collection, query, getDocs, where } from "firebase/firestore";
 
-import Item from "../Item/Item";
-import "./ItemList.css";
+import Item from "../../Item/Item";
 
-const ItemList = () => {
+
+const Picar = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
     const getProducts = async () => {
-      const q = query(collection(db, "Products"));
+      const q = query(collection(db, "Products"), where('category', '==', 'para picar') );
       const docs = [];
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
@@ -41,4 +41,4 @@ const ItemList = () => {
   );
 };
 
-export default ItemList;
+export default Picar;

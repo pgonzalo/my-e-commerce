@@ -3,12 +3,12 @@ import { getFirestore } from "firebase/firestore"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAHXqi5jF0_N8RBeV7WgXvYqs0cSKocKIg",
-  authDomain: "e-commerce-nativo-28c0a.firebaseapp.com",
-  projectId: "e-commerce-nativo-28c0a",
-  storageBucket: "e-commerce-nativo-28c0a.appspot.com",
-  messagingSenderId: "853449125309",
-  appId: "1:853449125309:web:e7708513133cdd364276d4"
+  apiKey: process.env.REACT_APP_FIREBASE_APIKEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECTID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_FIREBASE_APPID,
 };
 
 // Initialize Firebase

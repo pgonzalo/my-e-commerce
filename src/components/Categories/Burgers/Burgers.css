@@ -1,0 +1,8 @@
+.Item-List{
+    display: flex;
+    flex-wrap: wrap;
+    
+} 
+.title{
+    font-weight: bolder;
+}

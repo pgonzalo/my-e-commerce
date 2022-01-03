@@ -1,11 +1,15 @@
 import React, { useEffect, useState, useContext } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { Item } from "semantic-ui-react";
-import axios from "axios";
 import { useParams } from "react-router";
 import "./ItemDetailContainer.css";
 import { Link } from "react-router-dom";
 import { CartContext } from "../Context/CartContext";
+
+//FIREBASE
+import { db } from "../../firebase/firebaseConfig";
+import { collection, query, getDocs } from "firebase/firestore";
+
 
 function ItemDetailContainer({items}) {
   const { addToCart } = useContext(CartContext);
@@ -23,42 +27,46 @@ function ItemDetailContainer({items}) {
   //   alert(`Ingresaste ${counter} ${prod} al carrito.`);
  //  }
 
+  const [item, setItem] = useState([]);
+  
+  let paramsID = useParams();
 
-  let id = useParams();
-
-  let userID = id.id;
-
-  const [item, setItem] = useState();
+  const itemFiltered = item.filter((item) => {
+    return item.id === paramsID.id;
+  })
+  
 
   useEffect(() => {
-    axios(`https://api.github.com/users/${userID}`).then((res) => {
-      setItem(res.data);
-      console.log(res);
-    });
-    console.log(item);
-  }, [userID]);
+    const getProducts = async () => {
+      const q = query(collection(db, "Products"));
+      const docs = [];
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
+      });
+      setItem(docs);
+    };
+    getProducts();
+  }, []);
 
   return (
     <div className="ItemList-detail">
-      {item && (
-        <div>
+      {itemFiltered.map((item) => {
+        return (
+          <div>
           <Item.Group>
-            <Item>
-              <Item.Image size="big" src={item.avatar_url} />
+            <Item key={item.id}>
+              <Item.Image size="big" src={item.img} />
 
               <Item.Content>
-                <Item.Header as="a">{item.login}</Item.Header>
-                <Item.Meta>{item.emails_url}</Item.Meta>
-                <Item.Description>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Explicabo ipsa ipsum iusto, est, harum odit vel unde id quos
-                  non nostrum, tenetur molestias cumque! Esse possimus eveniet
-                  officiis facilis. Praesentium!
-                </Item.Description>
+                <Item.Header as="a">{item.name}</Item.Header>
+                <Item.Meta>$ {item.price} </Item.Meta>
+                <Item.Description> {item.description} </Item.Description> 
+                <br></br>
                 <>
                   {
                     !changeButton &&
-                    <ItemCount stock={12} item={item} onAdd={addToCart} initial={0} changeButton={changeButton} />
+                    <ItemCount stock={item.stock} item={item} onAdd={addToCart} initial={0} changeButton={changeButton} />
                   }
                   {
                     changeButton &&
@@ -66,24 +74,21 @@ function ItemDetailContainer({items}) {
                       <Link to='/'>
                         <button id="button-cart" variant="outline-dark">Continuar comprando</button>
                       </Link>
-                      <Link to='/cart'>
+                      <Link to='/shopping'>
                         <button id="button-cart" variant="outline-dark">Finalizar compra</button>
                       </Link>
                     </div>
                   }
                   
                 </>
-                <Item.Extra>
-                  {" "}
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Explicabo ipsa ipsum iusto, est, harum odit vel unde id quos
-                  non nostrum, tenetur molestias cumque!{" "}
-                </Item.Extra>
+
               </Item.Content>
             </Item>
           </Item.Group>
         </div>
-      )}
+        )
+        
+})}
     </div>
   );
 }
