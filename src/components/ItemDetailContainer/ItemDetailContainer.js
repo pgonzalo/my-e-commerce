@@ -7,9 +7,16 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../Context/CartContext";
 import Spinner from "../Spinner/Spinner";
 
+
 //FIREBASE
 import { db } from "../../firebase/firebaseConfig";
-import { collection, query, getDocs, where, documentId } from "firebase/firestore";
+import {
+  collection,
+  query,
+  getDocs,
+  where,
+  documentId,
+} from "firebase/firestore";
 
 function ItemDetailContainer({ items }) {
   const { addToCart } = useContext(CartContext);
@@ -30,11 +37,16 @@ function ItemDetailContainer({ items }) {
   const [item, setItem] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+
   let paramsID = useParams();
 
   useEffect(() => {
     const getProducts = async () => {
-      const q = query(collection(db, "Products"), where(documentId(), '==', paramsID.id));
+      const q = query(
+        collection(db, "Products"),
+        where(documentId(), "==", paramsID.id),
+        
+      );
       const docs = [];
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
@@ -51,55 +63,59 @@ function ItemDetailContainer({ items }) {
   return (
     <>
       {isLoading ? (
-				<div className='spinner'>
-					<Spinner />
-				</div>
-			) : (
-      <div className="ItemList-detail">
-        {item.map((item) => {
-          return (
-            <div>
-              <Item.Group>
-                <Item key={item.id}>
-                  <Item.Image size="big" src={item.img} />
+        <div className="spinner">
+          <Spinner />
+        </div>
+      ) : (
+        <div className="ItemList-detail">
+          {item.map((item) => {
+            return (
+              <div>
+                <Item.Group>
+                  <Item key={item.id}>
+                    <Item.Image size="big" src={item.img} />
 
-                  <Item.Content>
-                    <Item.Header as="a">{item.name}</Item.Header>
-                    <Item.Meta>$ {item.price} </Item.Meta>
-                    <Item.Description> {item.description} </Item.Description>
-                    <br></br>
-                    <>
-                      {!changeButton && (
-                        <ItemCount
-                          stock={item.stock}
-                          item={item}
-                          onAdd={addToCart}
-                          initial={0}
-                          changeButton={changeButton}
-                        />
-                      )}
-                      {changeButton && (
-                        <div>
-                          <Link to="/">
-                            <button id="button-cart" variant="outline-dark">
-                              Continuar comprando
-                            </button>
-                          </Link>
-                          <Link to="/shopping">
-                            <button id="button-cart" variant="outline-dark">
-                              Finalizar compra
-                            </button>
-                          </Link>
-                        </div>
-                      )}
-                    </>
-                  </Item.Content>
-                </Item>
-              </Item.Group>
-            </div>
-          );
-        })}
-      </div>
+                    <Item.Content>
+                      <Item.Header as="a">{item.name}</Item.Header>
+                      <br></br>
+                      <Item.Meta> {item.description} </Item.Meta>
+                      <br></br>
+                      <Item.Description>$ {item.price} </Item.Description>
+                      <br></br>
+
+                      <>
+                        {!changeButton && (
+                          <ItemCount
+                            stock={item.stock}
+                            item={item}
+                            onAdd={addToCart}
+                            initial={0}
+                            changeButton={changeButton}
+                          />
+                        )}
+
+                        {changeButton && (
+                          <div>
+                            <Link to="/">
+                              <button id="button-cart" variant="outline-dark">
+                                Continuar comprando
+                              </button>
+                            </Link>
+                            <Link to="/shopping">
+                              <button id="button-cart" variant="outline-dark">
+                                Finalizar compra
+                              </button>
+                            </Link>
+                          </div>
+                        )}
+                      </>
+                    </Item.Content>
+                  </Item>
+                </Item.Group>
+              </div>
+            );
+          })}
+        </div>
       )}
     </>
   );

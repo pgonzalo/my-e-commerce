@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import { useParams  } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import Spinner from "../Spinner/Spinner";
 
 //FIREBASE/
 import { db } from "../../firebase/firebaseConfig";
@@ -12,6 +13,7 @@ import Item from "../Item/Item";
 
 const ItemCategory = () => {
   const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   let category = useParams();  
   console.log(category);
 
@@ -27,14 +29,23 @@ const ItemCategory = () => {
         docs.push({ ...doc.data(), id: doc.id });
       });
       setItems(docs);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 1000);
     };
     getProducts();
   }, [category.category]);
  
 
   return (
+    <>
+    {isLoading ? (
+      <div className='spinner'>
+        <Spinner />
+      </div>
+    ) : (
     <div>
-      <h1 className="title"> Nuestras comidas </h1>
+      <h1 className="title"> Nuestras {category.category} </h1>
       <div className="Item-List">
         {items.map((item) => {
           return (
@@ -45,7 +56,11 @@ const ItemCategory = () => {
         })}
       </div>
     </div>
-  );
-};
+    )}
+    </>
+  )
+  
+  
+}
 
 export default ItemCategory;

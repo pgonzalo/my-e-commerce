@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Spinner from "../Spinner/Spinner";
 
+
 //FIREBASE
 import { db } from "../../firebase/firebaseConfig";
-import { collection, query, getDocs } from "firebase/firestore";
+import { collection, query, getDocs, orderBy } from "firebase/firestore";
 
 import Item from "../Item/Item";
 import "./ItemList.css";
@@ -12,10 +13,11 @@ import "./ItemList.css";
 const ItemList = () => {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  
 
   useEffect(() => {
     const getProducts = async () => {
-      const q = query(collection(db, "Products"));
+      const q = query(collection(db, "Products"), orderBy("category"));
       const docs = [];
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {

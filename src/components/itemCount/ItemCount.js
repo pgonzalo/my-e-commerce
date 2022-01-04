@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { InputGroup, Button, FormControl } from "react-bootstrap";
 import "./ItemCount.css";
+import { Link } from "react-router-dom";
 
 const ItemCount = ({ item, stock, onAdd, initial, changeButon }) => {
   
@@ -38,6 +39,7 @@ const ItemCount = ({ item, stock, onAdd, initial, changeButon }) => {
         </Button>
       </InputGroup>
       {counter > 0 ? (
+        <Link to="/shopping">
         <div
           className="ui bottom attached button"
           onClick={() => onAdd(item, counter)}
@@ -45,6 +47,7 @@ const ItemCount = ({ item, stock, onAdd, initial, changeButon }) => {
           <i className="cart icon"></i>
           Añadir al carrito
         </div>
+        </Link>
       ) : (
         <div className="ui bottom attached button disabled">
           <i className="cart icon"></i>

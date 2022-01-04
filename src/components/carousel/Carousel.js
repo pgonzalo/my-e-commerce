@@ -12,7 +12,7 @@ const CarouselContainer = () => {
             
               <img
                 className="d-block w-100"
-                src="https://res.cloudinary.com/dvptt7hw3/image/upload/v1638836132/Menu-1300X300-Draft1_qxotqn.jpg"
+                src="https://firebasestorage.googleapis.com/v0/b/e-commerce-nativo-28c0a.appspot.com/o/hamburguesa2.jpg?alt=media&token=e2e744e2-a0b3-48d7-a653-2ce6d7fdbd3d"
                 alt="Hamburguesa presentada en mano del chef"
                 style={{ height: "300px" }}
               />
@@ -26,8 +26,8 @@ const CarouselContainer = () => {
             <Carousel.Item>
               <img
                 className="d-block w-100"
-                src="https://res.cloudinary.com/dvptt7hw3/image/upload/v1638836094/images_tub1a6.jpg"
-                alt="Hamburguesa vista de erca con mucho queso"
+                src="https://firebasestorage.googleapis.com/v0/b/e-commerce-nativo-28c0a.appspot.com/o/WhatsApp%20Image%202021-12-21%20at%2017.36.11.jpeg?alt=media&token=4c21c46f-81c5-4f3a-b62e-ef25c0492ea6"
+                alt="Hamburguesa vista de cerca con mucho queso"
                 style={{ height: "300px" }}
               />
 
