@@ -5,10 +5,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Librerias usadas 
 
 En este proyecto utilicé las siguientes librerias:
-
--Bootstrap
--React-bootstrap
+ 
+-Para ayudarme con los estilos
+-Bootstrap 
+-React-bootstrap 
 -Semantic-ui
+
+-Para el icono del cart
 -bootstrap-icons
 
 ## Dependencias
@@ -31,4 +34,8 @@ En este proyecto utilicé las siguientes librerias:
     "web-vitals": "^1.1.2"
 
 ### `npm start`
+
+## Images
+
+
 
