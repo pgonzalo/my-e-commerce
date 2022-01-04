@@ -25,36 +25,33 @@ const ItemList = () => {
     };
     getProducts();
     setTimeout(() => {
-			setIsLoading(false);
-		}, 1000);
+      setIsLoading(false);
+    }, 1000);
   }, []);
- 
 
   return (
     <>
-    {isLoading ? (
-      <div className='spinner'>
-        <Spinner />
-      </div>
-    ) : (
-    <div>
-      <h1 className="title"> Nuestras comidas </h1>
-      <div className="Item-List">
-        {items.map((item) => {
-          return (
-            <Link to={`/detail/${item.id}`}>
-              <Item data={item} key={item.id} />
-            </Link>
-          );
-        })}
-      </div>
-    </div>
-    )
-      };
+      {isLoading ? (
+        <div className="spinner">
+          <Spinner />
+        </div>
+      ) : (
+        <div>
+          <h1 className="title"> Nuestras comidas </h1>
+          <div className="Item-List">
+            {items.map((item) => {
+              return (
+                <Link to={`/detail/${item.id}`}>
+                  <Item data={item} key={item.id} />
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      )}
+      ;
     </>
   );
-      
-  
 };
 
 export default ItemList;

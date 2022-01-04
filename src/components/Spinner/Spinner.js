@@ -1,12 +1,7 @@
-import React from 'react'
-import { Loader, Image, Segment } from 'semantic-ui-react'
+import React from 'react';
+import { Loader } from 'semantic-ui-react';
+import "./Spinner.css";
 
-const Spinner = () => (
-  <Segment>
-    <Loader active />
+const LoaderExampleInlineCentered = () => <Loader active inline='centered' />
 
-    <Image src='/images/wireframe/short-paragraph.png' />
-  </Segment>
-)
-
-export default Spinner
+export default LoaderExampleInlineCentered

@@ -1,13 +1,12 @@
 import React from "react";
 import { Card, Image } from "semantic-ui-react";
-//import ItemCount from "../ItemCount/ItemCount"
 import "./Item.css";
 
 const Item = ({ data }) => {
   return (
     <div className="item">
       <Card>
-        <Image src={data.img} wrapped ui={false} className="img" />
+        <Image src={data.img} wrapped ui={false} className="img" size="medium" bordered />
         <Card.Content>
           <Card.Header>{data.name}</Card.Header>
           <Card.Meta>

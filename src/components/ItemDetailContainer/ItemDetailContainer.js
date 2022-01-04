@@ -100,7 +100,7 @@ function ItemDetailContainer({ items }) {
           );
         })}
       </div>
-      )};
+      )}
     </>
   );
 }

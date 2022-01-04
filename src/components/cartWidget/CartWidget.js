@@ -4,6 +4,7 @@ import { Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import "./CartWidget.css";
 
+
 const CartWidget = () => {
   return (
     <div>
@@ -14,7 +15,7 @@ const CartWidget = () => {
           </Button>
         </Link>
       }
-      {/* <BsCart3 className="cart-icon" /> */}
+      
     </div>
   );
 }
