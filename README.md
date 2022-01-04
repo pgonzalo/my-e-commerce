@@ -36,6 +36,11 @@ En este proyecto utilicé las siguientes librerias:
 ### `npm start`
 
 ## Images
+![image](https://user-images.githubusercontent.com/70034555/148014149-7f596d80-4729-4eb0-b2e4-87d860376730.png)
+![image](https://user-images.githubusercontent.com/70034555/148014177-1d6c41ef-0f9f-4282-b783-0f6207e2f08a.png)
+![image](https://user-images.githubusercontent.com/70034555/148014221-645acb51-b4de-4979-8d97-8e389340ca13.png)
+
+
 
 
 
