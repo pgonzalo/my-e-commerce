@@ -1,6 +1,11 @@
-.ItemList-detail{
+.Item-Group{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    justify-content: space-around;
+    align-items: center;
+    border-style: solid;
+    
+    
 }
 

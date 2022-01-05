@@ -49,7 +49,7 @@ const ItemCount = ({ item, stock, onAdd, initial, changeButon }) => {
         </div>
         </Link>
       ) : (
-        <div className="ui bottom attached button disabled">
+        <div className="ui bottom attached button disabled" width="30px">
           <i className="cart icon"></i>
           Añadir al carrito
         </div>

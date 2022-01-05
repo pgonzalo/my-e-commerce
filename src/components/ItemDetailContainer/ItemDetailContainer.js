@@ -3,7 +3,7 @@ import ItemCount from "../ItemCount/ItemCount";
 import { Item } from "semantic-ui-react";
 import { useParams } from "react-router";
 import "./ItemDetailContainer.css";
-import { Link } from "react-router-dom";
+
 import { CartContext } from "../Context/CartContext";
 import Spinner from "../Spinner/Spinner";
 
@@ -20,19 +20,10 @@ import {
 
 function ItemDetailContainer({ items }) {
   const { addToCart } = useContext(CartContext);
-  const [changeButton, setChangeButton] = useState(false);
+  
 
-  const onAdd = (counter) => {
-    addToCart(items, counter);
-    setChangeButton(true);
-    alert(`Ingresaste ${counter} ${items} al carrito.`);
-  };
 
-  //  const addToCart = (counter) => {
-  //    let prod;
-  //    counter > 1 ? prod = 'productos' : prod = 'producto';
-  //   alert(`Ingresaste ${counter} ${prod} al carrito.`);
-  //  }
+
 
   const [item, setItem] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -71,7 +62,7 @@ function ItemDetailContainer({ items }) {
           {item.map((item) => {
             return (
               <div>
-                <Item.Group>
+                <Item.Group className="Item-Group">
                   <Item key={item.id}>
                     <Item.Image size="big" src={item.img} />
 
@@ -84,30 +75,17 @@ function ItemDetailContainer({ items }) {
                       <br></br>
 
                       <>
-                        {!changeButton && (
+                        
                           <ItemCount
                             stock={item.stock}
                             item={item}
                             onAdd={addToCart}
                             initial={0}
-                            changeButton={changeButton}
+                            
                           />
-                        )}
+                        
 
-                        {changeButton && (
-                          <div>
-                            <Link to="/">
-                              <button id="button-cart" variant="outline-dark">
-                                Continuar comprando
-                              </button>
-                            </Link>
-                            <Link to="/shopping">
-                              <button id="button-cart" variant="outline-dark">
-                                Finalizar compra
-                              </button>
-                            </Link>
-                          </div>
-                        )}
+                        
                       </>
                     </Item.Content>
                   </Item>

@@ -1,8 +1,11 @@
 .item {
-    padding: 5px !important;
-    
-    
+    padding: 10px !important;
+    height: 400px;
 }
-.img {
-    size: medium !important;
+.ui.card>.image:not(.ui)>img, .ui.cards>.card>.image:not(.ui)>img {
+    max-height: 200px !important;
+}
+
+.itemContainer {
+    padding: 5px !important;
 }

@@ -39,7 +39,7 @@ const CarouselContainer = () => {
             <Carousel.Item>
               <img
                 className="d-block w-100"
-                src="https://res.cloudinary.com/dvptt7hw3/image/upload/v1638836091/bad-daddy_cdxgiz.jpg"
+                src="https://firebasestorage.googleapis.com/v0/b/e-commerce-nativo-28c0a.appspot.com/o/hamburguesa345345345345345.jpg?alt=media&token=cb2f10bd-1784-4f60-b726-2055f2a2b121"
                 alt="Vista de Hamburguesa con papas"
                 style={{ height: "300px" }}
               />

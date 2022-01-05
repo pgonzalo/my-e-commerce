@@ -4,8 +4,8 @@ import "./Item.css";
 
 const Item = ({ data }) => {
   return (
-    <div className="item">
-      <Card>
+    <div className="itemContainer">
+      <Card className="item">
         <Image src={data.img} wrapped ui={false} className="img" size="medium" bordered />
         <Card.Content>
           <Card.Header>{data.name}</Card.Header>

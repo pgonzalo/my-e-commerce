@@ -5,13 +5,15 @@ import { Link } from "react-router-dom";
 import "./CartWidget.css";
 
 
+
 const CartWidget = () => {
+
   return (
     <div>
       {
         <Link to={`/cart`}>
           <Button id="button" variant="green">
-            <BsCart3 className="cart-icon" />
+            <BsCart3 className="cart-icon"  />
           </Button>
         </Link>
       }

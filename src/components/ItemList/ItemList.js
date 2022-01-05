@@ -43,7 +43,7 @@ const ItemList = () => {
           <div className="Item-List">
             {items.map((item) => {
               return (
-                <Link to={`/detail/${item.id}`}>
+                <Link to={`/detail/${item.id}`} key={item.id}>
                   <Item data={item} key={item.id} />
                 </Link>
               );
