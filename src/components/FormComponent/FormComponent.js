@@ -40,6 +40,7 @@ const FormComponent = () => {
 
   return (
     <div>
+      <h2 className="completa">Completa tus datos</h2>
       <form className="form-container" onSubmit={onSubmitHandler}>
         <Input
           placeholder="Name"

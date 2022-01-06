@@ -2,16 +2,18 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Se trata de un e-commerce pensado para una casa de comidas rapidas, en el cual trate de respetar los colores de la marca e intentar brindar informacion acorde a cada producto.
+
 ## Librerias usadas 
 
 En este proyecto utilicé las siguientes librerias:
  
--Para ayudarme con los estilos
+-Para ayudarme con los estilos:
 -Bootstrap 
 -React-bootstrap 
 -Semantic-ui
 
--Para el icono del cart
+-Para el icono del cart:
 -bootstrap-icons
 
 ## Dependencias
@@ -20,7 +22,6 @@ En este proyecto utilicé las siguientes librerias:
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-    "axios": "^0.24.0",
     "bootstrap": "^5.1.3",
     "bootstrap-icons": "^1.7.0",
     "react": "^17.0.2",

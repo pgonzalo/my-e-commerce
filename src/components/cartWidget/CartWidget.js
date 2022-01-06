@@ -11,7 +11,7 @@ const CartWidget = () => {
   return (
     <div>
       {
-        <Link to={`/cart`}>
+        <Link to={`/shopping`}>
           <Button id="button" variant="green">
             <BsCart3 className="cart-icon"  />
           </Button>

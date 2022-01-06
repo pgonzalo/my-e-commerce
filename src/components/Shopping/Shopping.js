@@ -24,7 +24,7 @@ const Shopping = () => {
 
                 <Table.Body>
                 {cartList && cartList.map((items) => {
-                    total = total += items.item.price;
+                    total = total += items.item.price*items.quantity;
                     let { item } = items;
                     return (
                         <Table.Row verticalAlign="middle" textAlign="center">     

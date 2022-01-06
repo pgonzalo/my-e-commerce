@@ -7,7 +7,6 @@ import "./ItemDetailContainer.css";
 import { CartContext } from "../Context/CartContext";
 import Spinner from "../Spinner/Spinner";
 
-
 //FIREBASE
 import { db } from "../../firebase/firebaseConfig";
 import {
@@ -20,14 +19,9 @@ import {
 
 function ItemDetailContainer({ items }) {
   const { addToCart } = useContext(CartContext);
-  
-
-
-
 
   const [item, setItem] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
 
   let paramsID = useParams();
 
@@ -35,8 +29,7 @@ function ItemDetailContainer({ items }) {
     const getProducts = async () => {
       const q = query(
         collection(db, "Products"),
-        where(documentId(), "==", paramsID.id),
-        
+        where(documentId(), "==", paramsID.id)
       );
       const docs = [];
       const querySnapshot = await getDocs(q);
@@ -75,17 +68,12 @@ function ItemDetailContainer({ items }) {
                       <br></br>
 
                       <>
-                        
-                          <ItemCount
-                            stock={item.stock}
-                            item={item}
-                            onAdd={addToCart}
-                            initial={0}
-                            
-                          />
-                        
-
-                        
+                        <ItemCount
+                          stock={item.stock}
+                          item={item}
+                          onAdd={addToCart}
+                          initial={0}
+                        />
                       </>
                     </Item.Content>
                   </Item>
