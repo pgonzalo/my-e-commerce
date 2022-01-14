@@ -14,7 +14,7 @@ import {
   query,
   getDocs,
   where,
-  documentId,
+  documentId
 } from "firebase/firestore";
 
 function ItemDetailContainer({ items }) {
