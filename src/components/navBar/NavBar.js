@@ -1,9 +1,9 @@
 import React from "react";
 import logo from "./logo.svg";
-import "./NavBar.css";
+import "./NavBar.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav  } from "react-bootstrap";
-import CartWidget from "../CartWidget/CartWidget";
+import CartWidget from "../cartWidget/CartWidget";
 import {  NavLink } from "react-router-dom";
 
 

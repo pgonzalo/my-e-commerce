@@ -6,7 +6,7 @@ const Home = () => {
     return (
         <div>
             <CarouselContainer /> 
-            <ItemListContainer greeting="Bienveido A Nativo"/>
+            <ItemListContainer />
         </div>
     )
 }

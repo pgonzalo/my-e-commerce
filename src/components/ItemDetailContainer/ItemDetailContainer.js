@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import ItemCount from "../ItemCount/ItemCount";
+import ItemCount from "../itemCount/ItemCount";
 import { Item } from "semantic-ui-react";
 import { useParams } from "react-router";
 import "./ItemDetailContainer.css";
