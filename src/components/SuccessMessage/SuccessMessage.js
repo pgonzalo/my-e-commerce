@@ -7,6 +7,7 @@ const SuccessMessage = ({ msg }) => (
 		header='Tu numero de orden es:'
 		content={msg.id}
 		style={{ textAlign: 'center' }}
+		size='big'
 	/>
 );
 

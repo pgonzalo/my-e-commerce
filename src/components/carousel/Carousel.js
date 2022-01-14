@@ -12,7 +12,7 @@ const CarouselContainer = () => {
             
               <img
                 className="d-block w-100"
-                src="https://firebasestorage.googleapis.com/v0/b/e-commerce-nativo-28c0a.appspot.com/o/hamburguesa2.jpg?alt=media&token=e2e744e2-a0b3-48d7-a653-2ce6d7fdbd3d"
+                src="https://firebasestorage.googleapis.com/v0/b/e-commerce-nativo-28c0a.appspot.com/o/999999999999999999999.jpg?alt=media&token=207fa48d-8094-4061-9c57-218f7038f12c"
                 alt="Hamburguesa presentada en mano del chef"
                 style={{ height: "300px" }}
               />
@@ -26,7 +26,7 @@ const CarouselContainer = () => {
             <Carousel.Item>
               <img
                 className="d-block w-100"
-                src="https://firebasestorage.googleapis.com/v0/b/e-commerce-nativo-28c0a.appspot.com/o/WhatsApp%20Image%202021-12-21%20at%2017.36.11.jpeg?alt=media&token=4c21c46f-81c5-4f3a-b62e-ef25c0492ea6"
+                src="https://firebasestorage.googleapis.com/v0/b/e-commerce-nativo-28c0a.appspot.com/o/000000000000000000000000.jpg?alt=media&token=f0733b6f-945a-4487-a5b3-6d11ece4b80d"
                 alt="Hamburguesa vista de cerca con mucho queso"
                 style={{ height: "300px" }}
               />
